@@ -44,6 +44,7 @@ INSERT INTO `user` (`ID`, `Username`, `Password`, `Gender`, `Email`, `DOB`) VALU
 ('AA001', 'Benedicto', '12345678', 'Male', 'secprog@gmail.com', '2002-11-20'),
 ('AA002', 'Lisa', '12345678', 'Female', 'prosec@gmail.com', '2002-06-04');
 
+
 --
 -- Indexes for dumped tables
 --
