@@ -62,7 +62,5 @@
         </footer>
     </div>
 </body>
-<script src="../js/rspv.js"></script>
-<script src="../js/register.js"></script>
 
 </html>
