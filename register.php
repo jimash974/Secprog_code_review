@@ -45,6 +45,7 @@
                     </div>
                     <input type="submit" id="input" value="Register">
                 </form>
+                <h4>Have an account? <a href="login.php">Login</a>
             </div>
         </div>
 
