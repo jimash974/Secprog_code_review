@@ -15,7 +15,7 @@
         <div class="container-regist">
             <h1>Register</h1>
             <div class="login1">
-                <form id="subform">
+                <form id="subform" action="controller/AuthController.php" method="POST">
                     <div class="login-text">
                         <input type="text" class="itext" id="name" placeholder="a">
                         <!-- <span></span> -->
