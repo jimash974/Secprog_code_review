@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once('./connection.php');
     if($_SERVER['request_method'] === 'POST'){
         // handle POST
@@ -17,7 +18,7 @@
 
             } else {
                 var_dump("Wrong Credentials, please try again");
-                
+
             }
 
         }
