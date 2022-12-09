@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (isset($_POST['email']) && isset($_POST ['password'])) {
         //user ingin login
        
-
         $query = "SELECT username FROM user WHERE email = '$email' AND password = '$password';";
 
         $result = $connection->query($query);
