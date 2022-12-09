@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-  <title>MediCare</title>
+  <title>Login</title>
 </head>
 
 <body>
@@ -47,7 +47,7 @@
             <input type="submit" id="input" value="Login">
           </form>
           <br>
-          <h4>Don't have an account yet? <a href="register.html">Register</a> now !</h2>
+          <h4>Don't have an account yet? <a href="register.php">Register</a> now !</h2>
         </div>
       </div>
 
@@ -61,6 +61,7 @@
             <i class="fa-brands fa-instagram"></i>
           </div>
           <p>Copyright © 2022 Kelompok 6 SecProg. All Rights Reserved</p>
+
         </div>
       </footer>
     </div>
