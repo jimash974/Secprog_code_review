@@ -17,7 +17,7 @@
     <div class="container-login">
       <h1>Login</h1>
       <div class="login1">
-        <form action="messages.php" method="POST" id="subform">
+        <form action=".controller/AuthController.php" method="POST" id="subform">
           <div class="login-text">
             <input type="text" id="email" class="itext" placeholder="a">
             <label for="" class="text-label">Email</label>
