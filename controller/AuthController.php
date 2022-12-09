@@ -19,6 +19,8 @@
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['email'] = $row['email'];
 
+                
+
 
 
                 var_dump($row);
