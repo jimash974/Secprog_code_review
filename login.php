@@ -22,21 +22,7 @@
           </div>
           <div class="navigation">
             <nav class="navbar">
-              <ul class="menu-navbar">
-                <li class="item-navbar">
-                  <div class="dropdown">
-                    <button class="button-drop">Products</button>
-                    <div class="konten-dropdown">
-                      <a href="products.html">Healthcare</a>
-                      <a href="#">Cosmetic</a>
-                      <a href="#">Misc.</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-navbar"><a href="aboutus.html" class="test">About Us</a></li>
-                <li class="item-navbar"><a href="register.html" class="test">Register</a></li>
-                <li class="item-navbar"><button class="nav-login"><a href="#" class="tx-login">Login</a></button></li>
-              </ul>
+
               <div class="hamburger">&#9776;</div>
             </nav>
           </div>
@@ -74,7 +60,7 @@
             <i class="fa-brands fa-facebook"></i>
             <i class="fa-brands fa-instagram"></i>
           </div>
-          <p>Copyright © 2022 William Josan. All Rights Reserved</p>
+          <p>Copyright © 2022 Kelompok 6 SecProg. All Rights Reserved</p>
         </div>
       </footer>
     </div>
