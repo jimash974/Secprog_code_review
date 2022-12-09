@@ -74,7 +74,7 @@
                     <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-instagram"></i>
                 </div>
-                <p>Copyright © 2022 Kelompok 6 SecProg. All Rights Reserved<< /p>
+                <p>Copyright © 2022 Kelompok 6 SecProg. All Rights Reserved </p>
             </div>
         </footer>
     </div>
