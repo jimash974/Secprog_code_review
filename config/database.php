@@ -1,3 +1,3 @@
 <?php
-sdasd
+  $_SESSION
 ?>
