@@ -17,7 +17,6 @@
 
                 $_SESSION['is_login'] = true;
                 $_SESSION['username'] = $row['username'];
-                $_SESSION['full_name'] = $row['fullname'];
                 $_SESSION['email'] = $row['email'];
 
 
