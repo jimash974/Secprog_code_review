@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once('./DB-Connect.php');
+require_once('./database.php');
 require_once('./create-session.php');
 
    
@@ -27,11 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
             SessionCreate($row["username"], $email);
 
-            header("Location: home.php");
+            header("Location: successful.php");
         }
-        else{
+        else
+        {
             //email or password is invalid.
-            var_dump("Email/Password is invalid.");
+            var_dump("Email / Password is invalid.");
         }
 
     }
