@@ -1,16 +1,45 @@
 <?php
-session_start();
 
-if (isset($_SESSION['is_login'])) {
-    if ($_SESSION['is_login'] == true) {
-        header('Location: messages.php');
+function CheckSessionValidity(){
+    if (!isset($_SESSION['is_login'])){
+        header('Location: login.php');
+    
     }
-} else {
-    header('Location: login.php');
+
+    if (strcmp($_SESSION['is_login'],'Login')!==0){
+
+        echo "Session Id tidak valid";
+        session_reset();
+        header('Location: login.php');
+    }
+
+    else if(strcmp($_SESSION['is_login'],'Login')===0){
+        //validasi IP Address and User Agent
+
+        $ipaddress = $_SERVER['REMOTE_ADDR'];
+        $useragent = $_SERVER['HTTP_USER_AGENT'];
+
+        $counter = 0;
+
+        if(strcmp($_SESSION['ip_address'], $ipaddress)===0){
+            if(strcmp($_SESSION['user_agent'], $useragent)===0){
+                $counter = $counter + 1;
+            }
+        }
+
+
+        if($counter !== 3){
+            session_destroy();
+            echo "Invalid";
+            header('Location: index.php');
+        }
+    }
 }
+
+
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -43,4 +72,4 @@ if (isset($_SESSION['is_login'])) {
     </div>
 </body>
 
-</html>
+</html> -->
