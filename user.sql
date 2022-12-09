@@ -2,6 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
+
+
+
+
 -- Host: 127.0.0.1
 -- Waktu pembuatan: 23 Nov 2022 pada 17.34
 -- Versi server: 10.4.25-MariaDB
