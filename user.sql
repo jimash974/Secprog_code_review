@@ -2,12 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
-
-
-
-
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Nov 2022 pada 17.34
+-- Waktu pembuatan: 09 Des 2022 pada 12.14
 -- Versi server: 10.4.25-MariaDB
 -- Versi PHP: 7.4.30
 
@@ -45,8 +41,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `Username`, `Password`, `Gender`, `Email`, `DOB`) VALUES
-('AA001', 'Jonatan', '25d55ad283aa400af464c76d713c07ad', 'Male', 'secprog@gmail.com', '2002-11-20'),
-('AA002', 'Jonatan1', 'c1f70797f76dfc27cd60af4348264fd1', 'Female', 'prosec@gmail.com', '2002-06-04');
+('AA001', 'Benedicto', '12345678', 'Male', 'secprog@gmail.com', '2002-11-20'),
+('AA002', 'Lisa', '12345678', 'Female', 'prosec@gmail.com', '2002-06-04');
 
 --
 -- Indexes for dumped tables
