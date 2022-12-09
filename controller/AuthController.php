@@ -3,7 +3,7 @@ session_start();
 require_once('./connection.php');
 if ($_SERVER['request_method'] === 'POST') {
     // handle POST
-    if (isset($_POST['uesrname']) && isset($_POST['password'])) {
+    if (isset($_POST['username']) && isset($_POST['password'])) {
         // user mau login
         $username = $_POST['username'];
         $password = $_POST['password'];
