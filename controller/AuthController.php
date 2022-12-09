@@ -8,7 +8,7 @@ if ($_SERVER['request_method'] === 'POST') {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $query = "SELECT * FROM users WHERE
+        $query = "SELECT * FROM user WHERE
             username = '$username' AND password = '$password';";
 
         $result = $connection->query($query);
@@ -22,7 +22,7 @@ if ($_SERVER['request_method'] === 'POST') {
                 
 
 
-            header('Location: ../messages.php');
+            header('Location: messages.php');
             var_dump($row);
 
         } else {
