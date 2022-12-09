@@ -11,24 +11,6 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <div class="container-home">
-        <header>
-            <div class="cntr">
-                <div class="logo">
-                    <img src="../assets/icon.png" alt="">
-                </div>
-                <div class="navigation">
-                    <nav class="navbar">
-                        <ul class="menu-navbar">
-
-                        </ul>
-                        <div class="hamburger">&#9776;</div>
-                    </nav>
-                </div>
-            </div>
-        </header>
-
         <!-- FORM REGIST -->
         <div class="container-regist">
             <h1>Register</h1>
