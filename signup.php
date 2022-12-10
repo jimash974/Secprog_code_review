@@ -1,3 +1,25 @@
+<?php
+    session_start();
+
+    include("connect.php");
+    include("functions.php");
+
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        if(!empty($name) && !empty($password) && !is_numeric($name)){
+            $query = "INSERT INTO user (name, email, password) VALUES ('$name', '$email', '$password')";
+            mysqli_query($data_con, $query);
+            header("Location: login.php");
+            die;
+        } else {
+            echo "Enter Valid Information";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,35 +37,23 @@
         <div class="container-regist">
             <h1>Register</h1>
             <div class="login1">
-                <form id="subform" action="controller/AuthController.php" method="POST">
+                <form id="subform" action="" method="POST">
                     <div class="login-text">
-                        <input type="text" class="itext" id="name" placeholder="a">
+                        <input type="text" class="itext" id="name" name="name" placeholder="a">
                         <!-- <span></span> -->
                         <label for="" class="text-label">Full Name</label>
                     </div>
                     <div class="login-text">
-                        <input type="text" class="itext" id="email" placeholder="a">
+                        <input type="text" class="itext" id="email" name="email" placeholder="a">
                         <!-- <span></span> -->
                         <label for="" class="text-label">Email</label>
                     </div>
-                    <div class="gender-title">
-                        <label for="gender">Gender</label>
-                        <br>
-                        <input type="radio" id="gender" name="gender" value="Male" checked required>
-                        <label for="male">Male</label>
-                        <input type="radio" id="gender" name="gender" value="Female" checked required>
-                        <label for="female">Female</label>
-                    </div>
 
                     <div class="login-text">
-                        <input type="password" class="itext" id="password" placeholder="a">
+                        <input type="password" class="itext" id="password" name="password" placeholder="a">
                         <label for="" class="text-label">Password</label>
                     </div>
-                    <div class="login-text">
-                        <input type="password" class="itext" id="comfirmpassword" placeholder="a">
-                        <label for="" class="text-label">Confirm Password</label>
-                    </div>
-                    <input type="submit" id="input" value="Register">
+                    <input type="submit" id="input" name="register" value="Register">
                 </form>
                 <h4>Have an account? <a href="login.php">Login</a>
             </div>
