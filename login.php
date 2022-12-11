@@ -4,7 +4,6 @@ session_start();
 include("connect.php");
 include("functions.php");
 
-
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
   $name = $_POST['name'];
   $email = $_POST['email'];
