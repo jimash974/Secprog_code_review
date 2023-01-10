@@ -1,23 +1,5 @@
 <?php
     session_start();
-
-    include("connect.php");
-    include("functions.php");
-
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        if(!empty($name) && !empty($password) && !is_numeric($name)){
-            $query = "INSERT INTO user (name, email, password) VALUES ('$name', '$email', '$password')";
-            mysqli_query($data_con, $query);
-            header("Location: login.php");
-            die;
-        } else {
-            echo "Enter Valid Information";
-        }
-    }
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +12,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Register</title>
+
+    <link rel="stylesheet" href="signUp.css">
 </head>
 
 <body>
@@ -37,22 +21,42 @@
         <div class="container-regist">
             <h1>Register</h1>
             <div class="login1">
-                <form id="subform" action="" method="POST">
+                <form id="subform" action="./signUpController.php" method="POST">
                     <div class="login-text">
                         <input type="text" class="itext" id="name" name="name" placeholder="a">
                         <!-- <span></span> -->
-                        <label for="" class="text-label">Full Name</label>
+                        <label for="" class="text-label">Username</label>
+                        <?php
+                            if(isset($_SESSION['error'])){
+                        ?>
+                            <p class="error"><?= $_SESSION['error']; ?></p>
+                        <?php
+                            }
+                            unset($_SESSION["error"]);
+
+                        ?> 
                     </div>
                     <div class="login-text">
-                        <input type="text" class="itext" id="email" name="email" placeholder="a">
+                        <input type="text" class="itext" id="email" name="email" placeholder="">
                         <!-- <span></span> -->
                         <label for="" class="text-label">Email</label>
                     </div>
 
                     <div class="login-text">
-                        <input type="password" class="itext" id="password" name="password" placeholder="a">
+                        <input type="password" class="itext" id="password" name="password" placeholder="">
                         <label for="" class="text-label">Password</label>
                     </div>
+
+                    <div class="login-text flex">
+                        <label for="" class="text-label">Gender</label>
+                        <div class="gender">
+                            <select name="gender" id="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <input type="submit" id="input" name="register" value="Register">
                 </form>
                 <h4>Have an account? <a href="login.php">Login</a>

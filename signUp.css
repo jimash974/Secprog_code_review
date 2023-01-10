@@ -1,0 +1,18 @@
+.gender{
+    position: absolute;
+    top: 50%;
+    left: 70%;
+}
+
+#gender{
+    padding: 10px;
+}
+
+.error{
+    color: red;
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    font-style: italic;
+    font-size: 15px;
+}

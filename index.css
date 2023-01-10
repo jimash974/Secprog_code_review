@@ -1,0 +1,11 @@
+a button{
+    padding: 10px;
+    background-color: #38abab;
+    border: none;
+    color: white;
+}
+
+a button:hover{
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.416);
+}
