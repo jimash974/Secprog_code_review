@@ -1,31 +1,9 @@
 <?php
-session_start();
+  session_start();
+  require_once('./utils/csrf.php');
 
-include("connect.php");
-include("functions.php");
-
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $name = $_POST['name'];
-  $password = $_POST['password'];
-
-  if (!empty($name) && !empty($password) && !is_numeric($name)) {
-    $query = "SELECT * FROM user WHERE Username = '$name' limit 1";
-    $result = mysqli_query($data_con, $query);
-    if ($result) {
-      if ($result && mysqli_num_rows($result) > 0) {
-        $user_data = mysqli_fetch_assoc($result);
-        if (password_verify($password, $user_data['Password'])) {
-          $_SESSION['id'] = $user_data['id'];
-          header("Location: ./index.php");
-          die;
-        }
-      }
-    }
-    echo "Wrong Username or Password";
-  } else {
-    echo "Enter Valid Information";
-  }
-}
+  $token = generateCsrfToken();
+  $_SESSION['token'] = $token;
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="container-login">
       <h1>Login</h1>
       <div class="login1">
-        <form action="" id="subform" method="post">
+        <form action="./controllers/loginController.php" id="subform" method="post">
           <div class="login-text">
             <input type="text" id="name" name="name" class="itext" placeholder="a">
             <label for="" class="text-label">Name</label>
@@ -56,6 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
           <div class="login-text">
             <input type="password" id="password" name="password" class="itext" placeholder="a">
             <label for="" class="text-label">Password</label>
+          </div>
+
+          <div class="login-text">
+            <input type="hidden" id="csrf_token" name="csrf_token" class="itext" placeholder="a" value="<?= $_SESSION['token'];?>">
           </div>
           <br>
           <input type="submit" id="input" value="Login">

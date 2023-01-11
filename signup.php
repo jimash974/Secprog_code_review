@@ -1,5 +1,8 @@
 <?php
     session_start();
+    include("./utils/csrf.php");
+    $token = generateCsrfToken();
+    $_SESSION['token'] = $token;
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +24,7 @@
         <div class="container-regist">
             <h1>Register</h1>
             <div class="login1">
-                <form id="subform" action="./signUpController.php" method="POST">
+                <form id="subform" action="./controllers/signUpController.php" method="POST">
                     <div class="login-text">
                         <input type="text" class="itext" id="name" name="name" placeholder="a">
                         <!-- <span></span> -->
@@ -37,13 +40,13 @@
                         ?> 
                     </div>
                     <div class="login-text">
-                        <input type="text" class="itext" id="email" name="email" placeholder="">
+                        <input type="text" class="itext" id="email" name="email" placeholder="a">
                         <!-- <span></span> -->
                         <label for="" class="text-label">Email</label>
                     </div>
 
                     <div class="login-text">
-                        <input type="password" class="itext" id="password" name="password" placeholder="">
+                        <input type="password" class="itext" id="password" name="password" placeholder="a">
                         <label for="" class="text-label">Password</label>
                     </div>
 
@@ -55,6 +58,10 @@
                                 <option value="female">Female</option>
                             </select>
                         </div>
+                    </div>
+
+                    <div class="login-text">
+                        <input type="hidden" id="csrf_token" name="csrf_token" class="itext" placeholder="a" value="<?= $_SESSION['token'];?>">
                     </div>
 
                     <input type="submit" id="input" name="register" value="Register">
