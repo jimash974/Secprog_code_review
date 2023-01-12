@@ -16,9 +16,9 @@
 
             if(strlen($name) > 20){
                 $_SESSION['error'] = "Username is too long, max = 20";
-                echo $name;
-                // header("Location: signUp.php");
-                // die;
+                // echo $name;
+                header("Location: ../signup.php");
+                die;
             }
 
             $email = $_POST['email'];
@@ -32,8 +32,9 @@
             }
     
             if(!empty($name) && !empty($password) && !is_numeric($name)){
-                $query = "INSERT INTO user (username, email, password, gender) VALUES ('$name', '$email', '$password', '$gender')";
-                mysqli_query($data_con, $query);
+                $stmt = mysqli_prepare($data_con, "INSERT INTO user (Username, email, password) VALUES (?, ?, ?)");
+                mysqli_stmt_bind_param($stmt, 'sss', $name, $email, $password);
+                mysqli_stmt_execute($stmt);
                 header("Location: ../login.php");
                 die;
             } else {

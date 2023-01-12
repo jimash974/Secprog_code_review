@@ -1,6 +1,6 @@
 <?php 
 
     function generateCsrfToken(){
-        $token = md5(uniqid());
+        $token = bin2hex(random_bytes(32));
         return $token;
     }

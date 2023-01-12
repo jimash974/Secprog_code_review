@@ -6,17 +6,20 @@ include("../functions.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
   $name = $_POST['name'];
+  // $name = $_POST['email'];
   $password = $_POST['password'];
   
   $token = $_POST['csrf_token'];
-  if($token == "" || $token != $_SESSION['token']){
+  if($token == "" || !hash_equals($_SESSION['token'], $token)){
     header('Location: ../login.php');
     die;
   }
   
   if (!empty($name) && !empty($password) && !is_numeric($name)) {
-    $query = "SELECT * FROM user WHERE Username = '$name' limit 1";
-    $result = mysqli_query($data_con, $query);
+    $stmt = mysqli_prepare($data_con, "SELECT * FROM user WHERE Username = ? limit 1");
+    mysqli_stmt_bind_param($stmt, 's', $name);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     if ($result) {
       if ($result && mysqli_num_rows($result) > 0) {
         $user_data = mysqli_fetch_assoc($result);
